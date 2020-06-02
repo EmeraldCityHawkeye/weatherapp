@@ -21,7 +21,7 @@ class App extends Component {
   state = {
     temperature: undefined,
     city: undefined,
-    country: undefined,
+    state: undefined,
     humidity: undefined,
     loading: false,
     description: undefined,
@@ -39,9 +39,9 @@ class App extends Component {
 
     
     const city = e.target.elements.city.value;
-    const country = e.target.elements.country.value;
+    const state = e.target.elements.state.value;
 
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=d388cc9c41e5c0d4bf75a2ab328a574f&units=imperial`)
+    const data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${state}&appid=d388cc9c41e5c0d4bf75a2ab328a574f&units=imperial`)
                       .then(this.setState({
                         loading: true
                       }))     
@@ -55,14 +55,14 @@ class App extends Component {
     //const data = await api_call.json();
   
   
-    if(city && country){
+    if(city && state){
         
         if(!data.list){
               this.setState({
 
               temperature: undefined,
               city: undefined,
-              country: undefined,
+              state: undefined,
               humidity: undefined,
               description: undefined,
               error: "Unable to get weather info!... Please check the values entered..."
@@ -102,7 +102,7 @@ class App extends Component {
 
                   temperature: data.list[0].main.temp,
                   city: data.city['name'],
-                  country: data.city['country'],
+                  state: data.city['state'],
                   humidity: data.list[0].main.humidity,
                   description: data.list[0].weather[0].description,
                   error: "",
@@ -123,7 +123,7 @@ class App extends Component {
 
       temperature: undefined,
       city: undefined,
-      country: undefined,
+      state: undefined,
       humidity: undefined,
       description: undefined,
       error: "Please enter some values!"
@@ -173,7 +173,7 @@ class App extends Component {
               /> : <Weather 
                   temperature={this.state.temperature}
                   city={this.state.city}
-                  country={this.state.country}
+                  state={this.state.state}
                   humidity={this.state.humidity}
                   description={this.state.description}
                   error={this.state.error}
