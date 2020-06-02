@@ -9,7 +9,7 @@ export default class Chart extends Component {
             datasets: [
               {
                 queue: 'queue1',
-                label: 'Temperature (\xB0C)',
+                label: 'Temperature (\xB0F)',
                 // 
                 backgroundColor: '#FFC1BF',
                 hoverBackgroundColor: '#F98783',

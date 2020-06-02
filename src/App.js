@@ -41,7 +41,7 @@ class App extends Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
 
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=d388cc9c41e5c0d4bf75a2ab328a574f&units=metric`)
+    const data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=d388cc9c41e5c0d4bf75a2ab328a574f&units=imperial`)
                       .then(this.setState({
                         loading: true
                       }))     
