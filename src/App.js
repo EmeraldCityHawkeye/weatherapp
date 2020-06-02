@@ -12,7 +12,7 @@ import Error from './components/Error';
 
 import './App.css';
 
-const API_KEY = "d5fc22e6a87efc7182437eec3e3e4e87";
+//const API_KEY = "d5fc22e6a87efc7182437eec3e3e4e87";
 
 
 
